@@ -10,7 +10,7 @@ sap.ui.define([
 		},
 
 		hookSetAddButtonVisibility: function() {
-			return true;
+			return false;
 		}
 	});
 });
