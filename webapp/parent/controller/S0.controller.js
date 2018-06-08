@@ -4,13 +4,6 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("parent.controller.S0", {
-		
-		onPressAdd: function(){
-			console.log('adicionando');
-			
-			if(this.extAfterAdd){
-				this.extAfterAdd();
-			}
-		}
+
 	});
 });

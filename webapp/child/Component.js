@@ -6,37 +6,51 @@ sap.ui.define([
 	return ParentComponent.extend("child.Component", {
 
 		metadata: {
+			"manifest": "json",
 			"customizing": {
-				"sap.ui.controllerReplacements": {
-					"parent.controller.S0": "child.controller.S0_Custom"
+				"sap.ui.viewModifications": {
+					"parent.view.S1": {
+						"header": {
+							"visible": false
+						}
+					}
+
 				},
 				"sap.ui.viewExtensions": {
-					"parent.view.S0": {
+					"parent.view.S1": {
 						"extFooter": {
 							"className": "sap.ui.core.Fragment",
-							"fragmentName": "child.fragments.S0_Footer",
+							"fragmentName": "child.fragments.S1_Footer",
 							"type": "XML"
 						}
 					}
 				},
-				"sap.ui.viewModifications": {
-					"parent.view.S0": {
-						"someControl": {
-							"visible": false
-						}
+				"sap.ui.controllerReplacements": {
+					"parent.controller.S1": "child.controller.S1_Custom"
+				},
+				"sap.ui.viewReplacements": {
+					"parent.view.S2": {
+						viewName: "child.view.S2_Custom",
+						type: "XML"
 					}
 				}
 			}
+
 		},
 
-		/**
-		 * The component is initialized by UI5 automatically during the startup of the app and calls the init method once.
-		 * @public
-		 * @override
-		 */
 		init: function() {
-			// call the base component's init function
 			ParentComponent.prototype.init.apply(this, arguments);
+
+			var oModel = new sap.ui.model.resource.ResourceModel({
+				bundleUrl: "../parent/i18n/i18n.properties"
+			});
+			oModel.enhance({
+				bundleUrl: "i18n/i18n.properties"
+			});
+
+			this.setModel(oModel, "i18n");
+			sap.ui.getCore().setModel(oModel, "i18n");
+
 		}
 	});
 });

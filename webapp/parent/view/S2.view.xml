@@ -1,0 +1,23 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="parent.controller.S2" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>new}" showNavButton="true" navButtonPress="onBack">
+		<content>
+			<f:SimpleForm layout="ResponsiveGridLayout">
+				<f:content>
+					<Label text="First Name"/>
+					<Input/>
+					<Label text="Last Name"/>
+					<Input/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://save" text="{i18n>save}"/>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

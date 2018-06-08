@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta charset="UTF-8">
 
-		<title>Extensao</title>
+		<title>Child</title>
 
 		<script id="sap-ui-bootstrap"
 			src="/resources/sap-ui-core.js"
@@ -13,19 +13,18 @@
 			data-sap-ui-theme="sap_belize"
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-resourceroots='{
-				"parent": "./parent", 
-				"child": "./child"
+				"parent": "../parent", 
+				"child": "./"
 			}'>
 		</script>
 
-		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<script>
 			sap.ui.getCore().attachInit(function() {
 				new sap.m.Shell({
 					app: new sap.ui.core.ComponentContainer({
 						height : "100%",
-						name : "child" // or parent
+						name : "child"
 					})
 				}).placeAt("content");
 			});

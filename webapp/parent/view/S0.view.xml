@@ -1,20 +1,7 @@
 <mvc:View controllerName="parent.controller.S0" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-	<App>
+	<App id="app">
 		<pages>
-			<Page title="{i18n>title}">
-				<content>
-					<Text id="someControl" text="Parent"/>
-				</content>
-				<footer>
-					<Toolbar>
-						<content>
-							<ToolbarSpacer />
-							<core:ExtensionPoint name="extFooter"/>
-							<Button press="onPressAdd" icon="sap-icon://add"/>
-						</content>
-					</Toolbar>
-				</footer>
-			</Page>
+			
 		</pages>
 	</App>
 </mvc:View>
